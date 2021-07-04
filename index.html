@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    </head>
+
+	<script>
+    AFRAME.registerComponent('clickhandler1', {
+        init: function() {
+            this.el.addEventListener('click', () => {
+                alert('Clicked Flamingo!');
+				
+	const url='https://976d1e647c42.ngrok.io/drugi?trajanje=1&tezina=60&tip=1';	 
+		
+						
+window.location.replace(url);
+				
+				
+            });
+    }});
+	
+	AFRAME.registerComponent('clickhandler1', {
+        init: function() {
+            this.el.addEventListener('click', () => {
+                alert('Encountering knight...');
+				const url='https://www.appsheet.com/start/f714e847-f7f3-439d-b7df-0f2a4a4559d5#appName=NewApp-2551035&group=%5B%5D&row=i1&sort=%5B%5D&table=Info&view=Info_Detail';	 
+				window.location.replace(url);		
+            });
+    }});
+		
+
+	AFRAME.registerComponent('clickhandler5', {
+        init: function() {
+            this.el.addEventListener('click', () => {
+                alert('Found sword!');
+				const url='https://www.appsheet.com/start/f714e847-f7f3-439d-b7df-0f2a4a4559d5#appName=NewApp-2551035&group=%5B%5D&row=a1&sort=%5B%5D&table=Artifacts&view=Artifacts_Detail';	 
+				window.location.replace(url);		
+            });
+    }});
+	
+	AFRAME.registerComponent('clickhandler4', {
+        init: function() {
+            this.el.addEventListener('click', () => {
+                alert('Question box!');
+				const url='https://www.appsheet.com/start/f714e847-f7f3-439d-b7df-0f2a4a4559d5#appName=NewApp-2551035&group=%5B%5D&row=Which+movie+was+recorded+here%3F&sort=%5B%5D&table=Questions&view=Questions_Detail';	 
+				window.location.replace(url);		
+            });
+    }});
+		
+		
+	AFRAME.registerComponent('clickhandler3', {
+        init: function() {
+            this.el.addEventListener('click', () => {
+                alert('Question box!');
+				const url='https://www.appsheet.com/start/f714e847-f7f3-439d-b7df-0f2a4a4559d5#appName=NewApp-2551035&group=%5B%5D&row=Ni%C5%A1+Fortress+was+built+in+__+century%3F&sort=%5B%5D&table=Questions&view=Questions_Detail';	 
+				window.location.replace(url);		
+            });
+    }});
+			
+	
+	
+</script>
+    <body style="margin: 0; overflow: hidden;">
+        <a-scene
+			cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
+			raycaster="objects: [clickable];"
+            renderer="logarithmicDepthBuffer: true;"
+            embedded
+            loading-screen="enabled: false;"
+            arjs="sourceType: webcam; debugUIEnabled: false;"
+        >
+            <a-assets>
+                <a-asset-item
+                    id="animated-asset1"
+                    src="assets/vitez.glb"
+                ></a-asset-item>
+				
+	
+				<a-asset-item
+                    id="animated-asset3"
+                    src="assets/vitez_mac.glb"
+                ></a-asset-item>
+				<a-asset-item
+                    id="animated-asset4"
+                    src="assets/kutija.glb"
+                ></a-asset-item>	
+				<a-asset-item
+                    id="animated-asset5"
+                    src="assets/sword/scene.gltf"
+                ></a-asset-item>	
+
+				
+            </a-assets>
+
+                <a-entity
+					clickhandler1
+                    look-at="[gps-camera]"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset1"
+                    scale="0.6633499408944072 0.6633499408944072 0.6633499408944072"
+                    gps-entity-place="latitude: 43.32252947797488; longitude: 21.898302368467085;"
+					clickable
+                ></a-entity>
+				
+
+			
+				
+				<a-entity
+                    clickhandler3
+					look-at="[gps-camera]"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset4"
+                    scale="0.6633499408944072 0.6633499408944072 0.6633499408944072"
+                    gps-entity-place="latitude: 43.321354082135144; longitude:21.895660768870496;"
+					clickable
+                ></a-entity>
+				
+				<a-entity
+                    clickhandler5
+					look-at="[gps-camera]"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset5"
+                    scale="0.6633499408944072 0.6633499408944072 0.6633499408944072"
+                    gps-entity-place="latitude: 43.32203462709198; longitude:21.89623846887046;"
+					clickable
+                ></a-entity>
+
+				<a-entity
+                    clickhandler4
+					look-at="[gps-camera]"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset4"
+                    scale="0.6633499408944072 0.6633499408944072 0.6633499408944072"
+                    gps-entity-place="latitude: 43.31813084264594; longitude:21.895653369281664;"
+					clickable
+                ></a-entity>				
+
+            <a-camera gps-camera rotation-reader></a-camera>
+        </a-scene>
+    </body>
+</html>
