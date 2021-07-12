@@ -10,21 +10,9 @@
     </head>
 
 	<script>
-    AFRAME.registerComponent('clickhandler1', {
-        init: function() {
-            this.el.addEventListener('click', () => {
-                alert('Clicked Flamingo!');
-				
-	const url='https://976d1e647c42.ngrok.io/drugi?trajanje=1&tezina=60&tip=1';	 
-		
-						
-window.location.replace(url);
-				
-				
-            });
-    }});
+
 	
-	AFRAME.registerComponent('clickhandler1', {
+	AFRAME.registerComponent('info-knight-handler', {
         init: function() {
             this.el.addEventListener('click', () => {
                 alert('Encountering knight...');
@@ -34,7 +22,7 @@ window.location.replace(url);
     }});
 		
 
-	AFRAME.registerComponent('clickhandler5', {
+	AFRAME.registerComponent('artifact-sword-handler', {
         init: function() {
             this.el.addEventListener('click', () => {
                 alert('Found sword!');
@@ -43,21 +31,21 @@ window.location.replace(url);
             });
     }});
 	
-	AFRAME.registerComponent('clickhandler4', {
+	AFRAME.registerComponent('question-horse-handler', {
         init: function() {
             this.el.addEventListener('click', () => {
                 alert('Question box!');
-				const url='https://www.appsheet.com/start/f714e847-f7f3-439d-b7df-0f2a4a4559d5#appName=NewApp-2551035&group=%5B%5D&row=Which+movie+was+recorded+here%3F&sort=%5B%5D&table=Questions&view=Questions_Detail';	 
+				const url='https://www.appsheet.com/start/f714e847-f7f3-439d-b7df-0f2a4a4559d5#appName=NewApp-2551035&group=%5B%5D&row=Ni%C5%A1+Fortress+was+built+in+__+century%3F&sort=%5B%5D&table=Questions&view=Questions_Detail';	 
 				window.location.replace(url);		
             });
     }});
 		
 		
-	AFRAME.registerComponent('clickhandler3', {
+	AFRAME.registerComponent('question-kazandzijsko-handler', {
         init: function() {
             this.el.addEventListener('click', () => {
                 alert('Question box!');
-				const url='https://www.appsheet.com/start/f714e847-f7f3-439d-b7df-0f2a4a4559d5#appName=NewApp-2551035&group=%5B%5D&row=Ni%C5%A1+Fortress+was+built+in+__+century%3F&sort=%5B%5D&table=Questions&view=Questions_Detail';	 
+				const url='https://www.appsheet.com/start/f714e847-f7f3-439d-b7df-0f2a4a4559d5#appName=NewApp-2551035&group=%5B%5D&row=Which+movie+was+recorded+here%3F&sort=%5B%5D&table=Questions&view=Questions_Detail';	 
 				window.location.replace(url);		
             });
     }});
@@ -75,68 +63,66 @@ window.location.replace(url);
             arjs="sourceType: webcam; debugUIEnabled: false;"
         >
             <a-assets>
-                <a-asset-item
-                    id="animated-asset1"
+
+				
+				<a-asset-item
+                    id="info-knight"
                     src="assets/vitez.glb"
                 ></a-asset-item>
 				
-	
+				
 				<a-asset-item
-                    id="animated-asset3"
-                    src="assets/vitez_mac.glb"
-                ></a-asset-item>
-				<a-asset-item
-                    id="animated-asset4"
+                    id="question-box"
                     src="assets/kutija.glb"
                 ></a-asset-item>	
+				
 				<a-asset-item
-                    id="animated-asset5"
+                    id="artifact-sword"
                     src="assets/sword/scene.gltf"
                 ></a-asset-item>	
 
 				
             </a-assets>
 
-                <a-entity
-					clickhandler1
-                    look-at="[gps-camera]"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset1"
-                    scale="0.6633499408944072 0.6633499408944072 0.6633499408944072"
-                    gps-entity-place="latitude: 43.32252947797488; longitude: 21.898302368467085;"
-					clickable
-                ></a-entity>
-				
-
-			
 				
 				<a-entity
-                    clickhandler3
+                    artifact-sword-handler
 					look-at="[gps-camera]"
                     animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset4"
+                    gltf-model="#artifact-sword"
                     scale="0.6633499408944072 0.6633499408944072 0.6633499408944072"
-                    gps-entity-place="latitude: 43.321354082135144; longitude:21.895660768870496;"
-					clickable
-                ></a-entity>
-				
-				<a-entity
-                    clickhandler5
-					look-at="[gps-camera]"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset5"
-                    scale="0.6633499408944072 0.6633499408944072 0.6633499408944072"
-                    gps-entity-place="latitude: 43.32203462709198; longitude:21.89623846887046;"
+                    gps-entity-place="latitude: 43.32210487496874; longitude:21.896184825098647;"
 					clickable
                 ></a-entity>
 
 				<a-entity
-                    clickhandler4
+                    question-horse-handler
 					look-at="[gps-camera]"
                     animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset4"
+                    gltf-model="#question-box"
                     scale="0.6633499408944072 0.6633499408944072 0.6633499408944072"
-                    gps-entity-place="latitude: 43.31813084264594; longitude:21.895653369281664;"
+                    gps-entity-place="latitude: 43.32130724964767; longitude:21.895639311608498;"
+					clickable
+                ></a-entity>	
+
+
+				<a-entity
+                    question-kazandzijsko-handler
+					look-at="[gps-camera]"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#question-box"
+                    scale="0.6633499408944072 0.6633499408944072 0.6633499408944072"
+                    gps-entity-place="latitude:43.31804497850297; longitude:21.89567482695489;"
+					clickable
+                ></a-entity>		
+
+
+
+				<a-entity
+                    info-knight-handler
+					look-at="[gps-camera]"
+                    gltf-model="#info-knight"
+                    gps-entity-place="latitude:43.326111751251645; longitude:21.895388198118553;"
 					clickable
                 ></a-entity>				
 
