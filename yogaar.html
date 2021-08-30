@@ -1,0 +1,70 @@
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+
+<script>
+
+var zahtev=0;
+const sleep = (milliseconds) => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+AFRAME.registerComponent('clickhandler', {
+    tick: async function () {
+
+	
+    if (document.querySelector('#marker1').object3D.visible == true && zahtev==0) {	
+	zahtev=1;
+	const http=new XMLHttpRequest();
+	const url1='https://www.appsheet.com/start/af3d52e7-3701-4e9a-a560-9804243a8511#appName=YogaAR-2551035&group=%5B%5D&row=e1&sort=%5B%5D&table=Exercises&view=Exercises_Detail';
+			sleep(1500).then(() => {
+				console.log("1");
+					http.open("GET",url1);
+					window.location.replace(url1);
+
+				zahtev=0;
+			})
+
+
+    } else {
+    
+	if (document.querySelector('#marker2').object3D.visible == true && zahtev==0) {	
+	zahtev=1;
+	const http2=new XMLHttpRequest();
+	const url2='https://www.appsheet.com/start/af3d52e7-3701-4e9a-a560-9804243a8511#appName=YogaAR-2551035&group=%5B%5D&row=e2&sort=%5B%5D&table=Exercises&view=Exercises_Detail';		 	
+	
+			sleep(1500).then(() => {
+				console.log("2");
+					http2.open("GET",url2);
+					window.location.replace(url2);
+
+				zahtev=0;
+			})
+	
+    } 
+	
+	
+    }
+}
+	
+});
+</script>
+<body style='margin : 0px; overflow: hidden;'>
+
+  <a-scene embedded arjs='sourceType: webcam;'>
+      <a-marker id="marker1" preset='hiro'  cursor='rayOrigin: mouse'>
+	    <a-entity gltf-model="./assets/models/yoga1/scene.gltf" 
+		rotation="0 30 0" scale="0.01 0.01 0.01"
+		/>
+              
+  </a-marker>
+  
+  
+   <a-marker id="marker2" preset='kanji'  cursor='rayOrigin: mouse'>
+	    <a-entity gltf-model="./assets/models/yoga2/scene.gltf" 
+		rotation="0 30 0" scale="1 1 1" 
+		/>
+              
+  </a-marker>
+  <a-entity camera>
+  </a-entity>
+  </a-scene>
+</body>
